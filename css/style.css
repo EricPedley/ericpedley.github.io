@@ -1,0 +1,118 @@
+body {
+    background-image:linear-gradient(to right,#FCECC9,#FEF3DC);
+}
+#footer {
+    background-color:#302622;
+    text-align:center;
+    height:10vh;
+    padding-top:1em;
+}
+#desc {
+    height:100vh;
+    color:#302622;
+}
+#pic {
+    height:100vh;
+    float: left;
+    /* background-image:linear-gradient(to right,#FCECC9,#FEF8EC); */
+}
+#blurb {
+    padding-top:25vh;
+}
+#name {
+    font-size:5em;
+}
+#job {
+    font-size:2em
+}
+#terapeut {
+    background-color:#FFAF32;
+    color:#FFFFFF;
+}
+#terapeut2 {
+    background-color:#3273dcff;
+}
+#justcare {
+    background-color:#ff553d;
+    color:#fdf7ed;
+}
+#justcare2 {
+    background-color:#152e4d;
+}
+#foodtube {
+    background-color:#8A6D6C;
+    color:#FFFFFF;
+}
+#foodtube2 {
+    background-color:#222222;
+}
+#fantasy-xc {
+    background-color: #343845;
+    color:white;
+}
+#fantasy-xc-2 {
+    background-color:#005f1e;
+}
+#eagle {
+    background-color:blue;
+    color:white;
+}
+#eagle2 {
+    background-color:red;
+}
+#playlist-converter {
+    background-color:#121212;
+}
+#playlist-converter-2 {
+    background-color:#1ed760;
+    color:#121212;
+}
+.project {
+    height:50vh;
+}
+.project-right {
+    padding-right:0px;
+}
+.projectpic {
+    max-width:100%;
+    max-height:45vh;
+    padding-top:5vh;
+    margin-right:auto;
+    margin-left:auto;
+    display:block;
+}
+.projectdesc {
+    margin-top:5vh;
+    padding-right:10px;
+    padding-left:10px;
+    padding-bottom:10px;
+}
+.row {
+    font-family: "Chakra Petch";
+}
+.links {
+    bottom:0px;
+    padding-left:10px;
+    padding-right:10px;
+    display:flex;
+}
+.linkicon {
+    height:1.1em;
+    margin-right:0.3em;
+}
+a {
+    display: flex;
+    align-items: center;
+    margin-right:2em;
+}
+a:link {
+    color:#FFFFFF;
+}
+a:visited {
+    color:#FFFFFF;
+}
+@media only screen and (max-width: 768px) {
+    .picholder {
+        display: none;
+    }
+}
