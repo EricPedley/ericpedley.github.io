@@ -60,6 +60,16 @@ body {
 #eagle2 {
     background-color:red;
 }
+#animal-run {
+    background-color:#3b8e60;
+    background-position-x: center;
+    background-position-y: bottom;
+    color:black
+}
+#animal-run-2 {
+    background-color:#a8dce9;
+    color:black;
+}
 #playlist-converter {
     background-color:#121212;
 }
