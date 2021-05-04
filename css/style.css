@@ -1,11 +1,22 @@
 body {
     background-image:linear-gradient(to right,#FCECC9,#FEF3DC);
+    overflow-x:hidden;
 }
 #footer {
     background-color:#302622;
     text-align:center;
     height:10vh;
     padding-top:1em;
+}
+#links {
+    font-size:1.25em;
+}
+.linkButton {
+    background-color:#302622;
+    display:inline;
+    border-radius:10px;
+    padding: 0.1em 0.25em 0.2em 0.25em;
+    margin-right:1em;
 }
 #desc {
     height:100vh;
@@ -84,7 +95,7 @@ body {
     padding-right:0px;
 }
 .projectpic {
-    max-width:100%;
+    max-width:90%;
     max-height:45vh;
     padding-top:5vh;
     margin-right:auto;
