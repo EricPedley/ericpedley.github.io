@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="6hMp8-AC4q7BGbuXQZsmuOkllxHj6si3zBrttmGUtyg" />
+    <title>Eric Pedley's Website</title>
+    <link rel="icon" href="images/icon.png">
+    <style>
+        #vid-div {
+            margin: 20px 0px;
+            position: relative;
+        }
+        #vid-blocker {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            z-index: 5;
+        }
+        #cookie-selector {
+            position:absolute;
+            top:50%;
+            left:50%;
+            z-index:6;
+        }
+        #yes {
+            float:left;
+        }
+        #no {
+            float:right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cookie-selector">
+        Accept cookies?
+        <br>
+        <button class="cookie-selector-button" id="yes">Yes</button>
+        <button class="cookie-selector-button" id="no">No</button>
+    </div>
+    <div id="vid-div" style="display:none;">
+        <div id="vid-blocker"></div>
+        <video id="vid" controls autoplay>
+            <source src="media/pompandcircumstance.mp4" type="video/mp4">
+        </video>
+    </div>
+</body>
+
+<script>
+    for(button of document.getElementsByClassName("cookie-selector-button")) {
+        button.onclick = () => {
+            document.getElementById("cookie-selector").style.display="none"
+            document.getElementById("vid-div").style.display="block"
+            document.getElementById("vid").play()
+        }
+    }
+</script>
+
+</html>
