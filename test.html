@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            position: relative;
+            width: 30%;
+            height: 22vw;
+            color:#FFFFFF;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align: center;
+        }
+        /*
+        What the before element does is create an empty element before the content of the class selected.
+        For example, inside each card element, before the content, a div with the content "" (it's empty) and 
+        all the css properties in this selector is created.
+        */
+        .card-background {
+            background-image: url("spotify app screenshot.jpg");
+            background-color:grey;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size:cover;
+            background-position:center;
+            filter: blur(2px) brightness(70%);
+            transition: opacity 1s;
+        }
+
+        .card-content {
+            position: relative;
+            font: bold 42px sans-serif;
+        }
+
+    </style>
+
+    <script>
+        window.onload = ()=> {
+            document.querySelectorAll(".card").forEach(element=> {
+                element.onmouseover = (event) => {
+                    element.children[0].style.opacity="0%"
+                    element.children[1].innerHTML="This is the description"
+                    element.children[1].style.fontSize="1em"
+                }
+                element.onmouseout = (event) => {
+                    element.children[0].style.opacity="100%"
+                    element.children[1].innerHTML="This is the header"
+                    element.children[1].style.fontSize="3em"
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-background"></div>
+        <div class="card-content">Spotify to Youtube Playlist Converter</div>
+    </div>
+</body>
+
+</html>
