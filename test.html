@@ -1,59 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
         .card {
             position: relative;
             width: 30%;
             height: 22vw;
-            color:#FFFFFF;
-            display:flex;
-            justify-content:center;
-            align-items:center;
+            color: #FFFFFF;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            transition: padding 0.5s, margin 0.5s;
+            margin: 10px;
         }
-        /*
-        What the before element does is create an empty element before the content of the class selected.
-        For example, inside each card element, before the content, a div with the content "" (it's empty) and 
-        all the css properties in this selector is created.
-        */
+
+        .card:hover {
+            margin: 0;
+            padding: 10px;
+        }
+
         .card-background {
             background-image: url("spotify app screenshot.jpg");
-            background-color:grey;
+            background-color: grey;
             content: "";
             position: absolute;
             width: 100%;
             height: 100%;
-            background-size:cover;
-            background-position:center;
+            background-size: cover;
+            background-position: center;
             filter: blur(2px) brightness(70%);
-            transition: opacity 1s;
+            transition: filter 1s;
         }
 
         .card-content {
             position: relative;
             font: bold 42px sans-serif;
+            transition: opacity 1s, width 0s 1s, height 0s 1s;
+            overflow: hidden;
         }
-
     </style>
 
     <script>
-        window.onload = ()=> {
-            document.querySelectorAll(".card").forEach(element=> {
+        window.onload = () => {
+            document.querySelectorAll(".card").forEach(element => {
                 element.onmouseover = (event) => {
-                    element.children[0].style.opacity="0%"
-                    element.children[1].innerHTML="This is the description"
-                    element.children[1].style.fontSize="1em"
+                    element.children[0].style.filter = "blur(2px) brightness(50%)";
+                    element.children[1].style.opacity = "0%";
+                    element.children[1].style.width = "0";
+                    element.children[2].style.opacity = "100%";
+                    element.children[2].style.width = "auto";
                 }
                 element.onmouseout = (event) => {
-                    element.children[0].style.opacity="100%"
-                    element.children[1].innerHTML="This is the header"
-                    element.children[1].style.fontSize="3em"
+                    element.children[0].style.filter = "blur(2px) brightness(70%)";
+                    element.children[1].style.opacity = "100%";
+                    element.children[1].style.width = "auto";
+                    element.children[2].style.opacity = "0%";
+                    element.children[2].style.width = "0";
                 }
             })
         }
@@ -63,7 +65,17 @@
 <body>
     <div class="card">
         <div class="card-background"></div>
-        <div class="card-content">Spotify to Youtube Playlist Converter</div>
+        <div class="card-content" style="font-size:300%;">This is the title</div>
+        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+            This is where the description of the project is going to be and it will be pretty long like this.
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-background"></div>
+        <div class="card-content" style="font-size:300%;">This is the title</div>
+        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+            This is where the description of the project is going to be and it will be pretty long like this.
+        </div>
     </div>
 </body>
 
