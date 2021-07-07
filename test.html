@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <head>
     <style>
+        body {
+            display:flex;
+            flex-wrap:wrap;
+            flex-shrink:0;
+        }
         .card {
             position: relative;
             width: 30%;
             height: 22vw;
             color: #FFFFFF;
-            display: inline-flex;
+            display: flex;
+            align-items:center;
             justify-content: center;
             text-align: center;
             transition: padding 0.5s, margin 0.5s;
@@ -33,9 +39,8 @@
 
         .card-content {
             position: relative;
-            align-self:center;
             font: bold 42px sans-serif;
-            transition: opacity 1s, width 0s 1s, height 0s 1s;
+            transition: opacity 1s, width 0s 1s;
             overflow: hidden;
         }
     </style>
@@ -45,18 +50,22 @@
             document.querySelectorAll(".card").forEach(element => {
                 element.onmouseover = (event) => {
                     element.children[0].style.filter = "blur(2px) brightness(50%)";
+
                     element.children[1].style.opacity = "0%";
                     element.children[1].style.width = "0";
                     element.children[1].style.position = "absolute";
+
                     element.children[2].style.opacity = "100%";
                     element.children[2].style.width = "auto";
                     element.children[2].style.position = "relative";
                 }
                 element.onmouseout = (event) => {
                     element.children[0].style.filter = "blur(2px) brightness(70%)";
+
                     element.children[1].style.opacity = "100%";
                     element.children[1].style.width = "auto";
                     element.children[1].style.position = "relative";
+
                     element.children[2].style.opacity = "0%";
                     element.children[2].style.width = "0";
                     element.children[2].style.position = "absolute";
@@ -67,6 +76,34 @@
 </head>
 
 <body>
+    <div class="card">
+        <div class="card-background"></div>
+        <div class="card-content" style="font-size:300%;">This is the title</div>
+        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+            This is where the description of the project is going to be and it will be pretty long like this.
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-background"></div>
+        <div class="card-content" style="font-size:300%;">This is the title</div>
+        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+            This is where the description of the project is going to be and it will be pretty long like this.
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-background"></div>
+        <div class="card-content" style="font-size:300%;">This is the title</div>
+        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+            This is where the description of the project is going to be and it will be pretty long like this.
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-background"></div>
+        <div class="card-content" style="font-size:300%;">This is the title</div>
+        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+            This is where the description of the project is going to be and it will be pretty long like this.
+        </div>
+    </div>
     <div class="card">
         <div class="card-background"></div>
         <div class="card-content" style="font-size:300%;">This is the title</div>
