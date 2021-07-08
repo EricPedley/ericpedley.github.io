@@ -1,46 +1,49 @@
-const { description } = require("commander");
-
 class Card extends HTMLElement {
     constructor() {
         super();
-        const titleContent = document.createElement("div");
+
+        const background = document.createElement("div");
+        const titleContent = document.createElement("h1");
         const descriptionContent = document.createElement("div");
-        const background = document.createElement("div");
-        const contentStyle = {
-            position: "relative",
-            transition: "opacity 1s, width 0s 1s",
-            overflow: "hidden"
-        }
-        for(const element in {titleContent,descriptionContent})
-            Object.assign(element.style,contentStyle);
 
-        const background = document.createElement("div");
-        const backgroundImageURL;
-        const backgroundStyle = {
-            backgroundImage: `url("${backgroundImageURL}")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            content: "",
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            filter: "blur(2px) brightness(70%)",
-            transition: "filter 1s",
-        }
-        Object.assign(background.style,backgroundStyle);
-        const cardStyle = {
-            position: "relative",
-            color: "#FFFFFF",
-            font: "bold 42px sans-serif",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            transition: "padding 0.5s, margin 0.5s",
-            margin: "10px",
-        }
-        Object.assign(this.style,cardStyle);
+        this.className="card"
+        background.className="card-background";
+        titleContent.className="card-content";
+        descriptionContent.className="card-content"
+
+        const backgroundImageURL="https://camo.githubusercontent.com/7102f579c4601c3086a103577db490dd344235c6fd2acffdc6ce1e44f04c929f/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f7733475372485350394c65707643745730472f67697068792e676966";
+        background.style.backgroundImage=`url("${backgroundImageURL}")`;
+
+        titleContent.style.fontSize="300%";
+        titleContent.innerHTML="This is the title"
+
+        descriptionContent.style.width=0;
+        descriptionContent.style.opacity=0;
+        descriptionContent.innerHTML="This is where the description of the project is going to be and it will be pretty long like this."
         
+        this.appendChild(background);
+        this.appendChild(titleContent);
+        this.appendChild(descriptionContent);1
+        
+        this.addEventListener("mouseenter", () => {
+            background.style.filter = "blur(2px) brightness(50%)";
 
+            titleContent.style.opacity = "0%";
+            titleContent.style.width = "0";
+
+            descriptionContent.style.opacity = "100%";
+            descriptionContent.style.width = "auto";
+        });
+        this.addEventListener("mouseleave", () => {
+            background.style.filter = "blur(2px) brightness(70%)";
+
+            titleContent.style.opacity = "100%";
+            titleContent.style.width = "auto";
+
+            descriptionContent.style.opacity = "0%";
+            descriptionContent.style.width = "0";
+        });
     }
 }
+
+customElements.define("project-card",Card);

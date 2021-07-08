@@ -14,6 +14,7 @@
         .card {
             position: relative;
             color: #FFFFFF;
+            font-family:sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -42,7 +43,6 @@
 
         .card-content {
             position: relative;
-            font: bold 42px sans-serif;
             transition: opacity 1s, width 0s 1s;
             overflow: hidden;
         }
@@ -50,10 +50,10 @@
 
     <script>
         window.onload = () => {
-            document.querySelectorAll(".card").forEach(element => {
+            document.querySelectorAll(".bruh").forEach(element => {
                 if(element.classList.contains("stupid-hack"))
                     return;
-                element.onmouseover = (event) => {
+                element.onmouseenter = (event) => {
                     element.children[0].style.filter = "blur(2px) brightness(50%)";
 
                     element.children[1].style.opacity = "0%";
@@ -62,7 +62,7 @@
                     element.children[2].style.opacity = "100%";
                     element.children[2].style.width = "auto";
                 }
-                element.onmouseout = (event) => {
+                element.onmouseleave = (event) => {
                     element.children[0].style.filter = "blur(2px) brightness(70%)";
 
                     element.children[1].style.opacity = "100%";
@@ -78,49 +78,23 @@
 
 <body>
     <div class="card-container">
-        <div class="card">
+        <div class="card bruh">
             <div class="card-background"></div>
             <div class="card-content" style="font-size:300%;">This is the title</div>
             <div class="card-content" style="font-size:100%;width:0;opacity:0;">
                 This is where the description of the project is going to be and it will be pretty long like this.
             </div>
         </div>
-        <div class="card">
+        <div class="card bruh">
             <div class="card-background"></div>
             <div class="card-content" style="font-size:300%;">This is the title</div>
             <div class="card-content" style="font-size:100%;width:0;opacity:0;">
                 This is where the description of the project is going to be and it will be pretty long like this.
             </div>
         </div>
-        <div class="card">
-            <div class="card-background"></div>
-            <div class="card-content" style="font-size:300%;">This is the title</div>
-            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-                This is where the description of the project is going to be and it will be pretty long like this.
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-background"></div>
-            <div class="card-content" style="font-size:300%;">This is the title</div>
-            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-                This is where the description of the project is going to be and it will be pretty long like this.
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-background"></div>
-            <div class="card-content" style="font-size:300%;">This is the title</div>
-            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-                This is where the description of the project is going to be and it will be pretty long like this.
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-background"></div>
-            <div class="card-content" style="font-size:300%;">This is the title</div>
-            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-                This is where the description of the project is going to be and it will be pretty long like this.
-            </div>
-        </div>
+        <project-card></project-card>
     </div>
+    <script src="cardElement.js"></script>
 </body>
 
 </html>
