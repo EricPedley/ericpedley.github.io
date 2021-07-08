@@ -1,23 +1,36 @@
 <!DOCTYPE html>
+
 <head>
     <style>
         body {
-            display:flex;
-            flex-wrap:wrap;
-            flex-shrink:0;
+            height: 100vh;
+            overflow-y: hidden;
+            background-color: #fcecc9;
         }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            /* grid-template-rows: repeat(10, minmax(300px, 1fr)); */
+        }
+
         .card {
             position: relative;
-            width: 30%;
-            height: 22vw;
             color: #FFFFFF;
             display: flex;
-            align-items:center;
+            align-items: center;
             justify-content: center;
             text-align: center;
             transition: padding 0.5s, margin 0.5s;
             margin: 10px;
         }
+
+        /* .card-content:before {
+            content: "";
+            display: block;
+            height: 0;
+            width: 0;
+            padding-bottom: calc(3/4 * 100%);
+        } */
 
         .card:hover {
             margin: 0;
@@ -25,7 +38,7 @@
         }
 
         .card-background {
-            background-image: url("spotify app screenshot.jpg");
+            background-image: url("https://camo.githubusercontent.com/7102f579c4601c3086a103577db490dd344235c6fd2acffdc6ce1e44f04c929f/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f7733475372485350394c65707643745730472f67697068792e676966");
             background-color: grey;
             content: "";
             position: absolute;
@@ -76,49 +89,50 @@
 </head>
 
 <body>
-    <div class="card">
-        <div class="card-background"></div>
-        <div class="card-content" style="font-size:300%;">This is the title</div>
-        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-            This is where the description of the project is going to be and it will be pretty long like this.
+    <div class="card-container">
+        <div class="card">
+            <div class="card-background"></div>
+            <div class="card-content" style="font-size:300%;">This is the title</div>
+            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+                This is where the description of the project is going to be and it will be pretty long like this.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-background"></div>
+            <div class="card-content" style="font-size:300%;">This is the title</div>
+            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+                This is where the description of the project is going to be and it will be pretty long like this.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-background"></div>
+            <div class="card-content" style="font-size:300%;">This is the title</div>
+            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+                This is where the description of the project is going to be and it will be pretty long like this.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-background"></div>
+            <div class="card-content" style="font-size:300%;">This is the title</div>
+            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+                This is where the description of the project is going to be and it will be pretty long like this.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-background"></div>
+            <div class="card-content" style="font-size:300%;">This is the title</div>
+            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+                This is where the description of the project is going to be and it will be pretty long like this.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-background"></div>
+            <div class="card-content" style="font-size:300%;">This is the title</div>
+            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+                This is where the description of the project is going to be and it will be pretty long like this.
+            </div>
         </div>
     </div>
-    <div class="card">
-        <div class="card-background"></div>
-        <div class="card-content" style="font-size:300%;">This is the title</div>
-        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-            This is where the description of the project is going to be and it will be pretty long like this.
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-background"></div>
-        <div class="card-content" style="font-size:300%;">This is the title</div>
-        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-            This is where the description of the project is going to be and it will be pretty long like this.
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-background"></div>
-        <div class="card-content" style="font-size:300%;">This is the title</div>
-        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-            This is where the description of the project is going to be and it will be pretty long like this.
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-background"></div>
-        <div class="card-content" style="font-size:300%;">This is the title</div>
-        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-            This is where the description of the project is going to be and it will be pretty long like this.
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-background"></div>
-        <div class="card-content" style="font-size:300%;">This is the title</div>
-        <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-            This is where the description of the project is going to be and it will be pretty long like this.
-        </div>
-    </div>
-    
 </body>
 
 </html>
