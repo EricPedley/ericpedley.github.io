@@ -22,14 +22,6 @@
             margin: 10px;
         }
 
-        /* .card-content:before {
-            content: "";
-            display: block;
-            height: 0;
-            width: 0;
-            padding-bottom: calc(3/4 * 100%);
-        } */
-
         .card:hover {
             margin: 0;
             padding: 10px;
@@ -59,13 +51,6 @@
     <script>
         window.onload = () => {
             document.querySelectorAll(".card").forEach(element => {
-                /*
-                This next line is dumb as hell. For some reason, whenever every card has had 
-                these handlers run once, their height goes to the minimum. So, the hack is adding 
-                an invisible card at the end that doesn't change content when hovered, that way all 
-                of them are never hovered and the grid doesn't screw up. I'm gonna try to find a way to
-                fix it without this hack but this works for now.
-                */
                 if(element.classList.contains("stupid-hack"))
                     return;
                 element.onmouseover = (event) => {
@@ -73,22 +58,18 @@
 
                     element.children[1].style.opacity = "0%";
                     element.children[1].style.width = "0";
-                    element.children[1].style.position = "absolute";
 
                     element.children[2].style.opacity = "100%";
                     element.children[2].style.width = "auto";
-                    element.children[2].style.position = "relative";
                 }
                 element.onmouseout = (event) => {
                     element.children[0].style.filter = "blur(2px) brightness(70%)";
 
                     element.children[1].style.opacity = "100%";
                     element.children[1].style.width = "auto";
-                    element.children[1].style.position = "relative";
 
                     element.children[2].style.opacity = "0%";
                     element.children[2].style.width = "0";
-                    element.children[2].style.position = "absolute";
                 }
             })
         }
@@ -139,14 +120,6 @@
                 This is where the description of the project is going to be and it will be pretty long like this.
             </div>
         </div>
-        <!--Check the card event handlers for an explanation of this "stupid-hack" card-->
-        <!-- <div class="card stupid-hack" style="opacity:0">
-            <div class="card-background"></div>
-            <div class="card-content" style="font-size:300%;">This is the title</div>
-            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
-                This is where the description of the project is going to be and it will be pretty long like this.
-            </div>
-        </div> -->
     </div>
 </body>
 
