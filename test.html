@@ -94,18 +94,22 @@
 
                     element.children[1].style.opacity = "0%";
                     element.children[1].style.width = "0";
+                    element.children[1].style.height = "0";
 
                     element.children[2].style.opacity = "100%";
                     element.children[2].style.width = "auto";
+                    element.children[2].style.height = "auto";
                 }
                 element.onmouseleave = (event) => {
                     element.children[0].style.filter = "blur(2px) brightness(70%)";
 
                     element.children[1].style.opacity = "100%";
                     element.children[1].style.width = "auto";
+                    element.children[1].style.height = "auto";
 
                     element.children[2].style.opacity = "0%";
                     element.children[2].style.width = "0";
+                    element.children[2].style.height = "0";
                 }
             })
         }
@@ -117,22 +121,20 @@
         <div class="card bruh">
             <div class="card-background"></div>
             <div class="card-content" style="font-size:300%;">This is the title</div>
-            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+            <div class="card-content" style="font-size:100%;width:0;height:0;opacity:0;">
                 This is where the description of the project is going to be and it will be pretty long like this.<br><br>
                 <a target="_blank" href="https://github.com/EricPedley/spotify-yt-react"><img class="linkicon"
                         src="images/github-logo.png">Source Code</a><br>
-                <a target="_blank" href="/"><img class="linkicon" src="images/heroku-logo.png">Not Live Yet
-                    Website</a>
+                <a target="_blank" href="/"><img class="linkicon" src="images/heroku-logo.png">Demo</a>
             </div>
         </div>
         <div class="card bruh">
             <div class="card-background"></div>
             <div class="card-content" style="font-size:300%;">This is the title</div>
-            <div class="card-content" style="font-size:100%;width:0;opacity:0;">
+            <div class="card-content" style="font-size:100%;width:0;height:0;opacity:0;">
                 This is where the description of the project is going to be and it will be pretty long like this.
             </div>
         </div>
-        <project-card></project-card>
     </div>
     <script src="cardElement.js"></script>
 </body>
