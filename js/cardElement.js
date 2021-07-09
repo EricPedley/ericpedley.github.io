@@ -16,7 +16,7 @@ async function getProjectDetails(repoLink,branch) {
         const title = new RegExp(/# (.*)/).exec(readmeText)[1]//first item in returned list is the full match so we ignore it
         const descriptionText = new RegExp(/Description:?\n(.*)/).exec(readmeText)[1]
         const backgroundImageURL = new RegExp(/project screenshot]\((.*?)\)/).exec(readmeText)[1]
-        const demoURL = new RegExp(/Demo Link]\((.*)\)/).exec(readmeText)[1]
+        const demoURL = new RegExp(/Demo Link]\((.*)\)/).exec(readmeText)?.[1];//optional chaining operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
         return {
             title:title,
             descriptionText:descriptionText,
@@ -25,6 +25,7 @@ async function getProjectDetails(repoLink,branch) {
         }
     } catch(error) {
         console.log(`failed regex match on project README for ${username}/${reponame}`)
+        console.error(error);
         return {
             title:"failed to load",
             descriptionText:`The README for this repo: ${username}/${reponame} is not formatted correctly.`,
