@@ -41,6 +41,10 @@ const customRepoList = [
     {
         html_url:"https://github.com/EricPedley/First-Unity-Project",
         default_branch:"main"
+    },
+    {
+        html_url:"https://github.com/EricPedley/deanza-course-notifier",
+        default_branch:"main"
     }//sites to add with gifs: animal run, knife guy, opengl projects, chrome extension
 ]
 window.onload=()=>addCards(customRepoList)

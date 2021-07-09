@@ -15,7 +15,7 @@ async function getProjectDetails(repoLink,branch) {
     try {
         const title = new RegExp(/# (.*)/).exec(readmeText)[1]//first item in returned list is the full match so we ignore it
         const descriptionText = new RegExp(/Description:?\n(.*)/).exec(readmeText)[1]
-        const backgroundImageURL = new RegExp(/project screenshot]\((.*?)\)/).exec(readmeText)[1]
+        const backgroundImageURL = new RegExp(/project screenshot]\((.*?)\)/).exec(readmeText)?.[1]
         const demoURL = new RegExp(/Demo Link]\((.*)\)/).exec(readmeText)?.[1];//optional chaining operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
         return {
             title:title,
@@ -50,7 +50,7 @@ class Card extends HTMLElement {
         sourceURL&&getProjectDetails(sourceURL,branch).then(({title,descriptionText,backgroundImageURL,demoURL})=>{
             titleContent.innerHTML = title;
             descriptionContent.innerHTML = descriptionText;
-            background.style.backgroundImage = `url("${backgroundImageURL}")`;
+            background.style.backgroundImage = backgroundImageURL? `url("${backgroundImageURL}")`:'url("images/default_image.png")';
             descriptionContent.innerHTML += `
             <br><br><a target="_blank" href="${sourceURL}">
                 <img class="linkicon" src="images/github-logo.png">Source Code
