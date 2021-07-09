@@ -29,10 +29,19 @@ const customRepoList = [
     {
         html_url:"https://github.com/EricPedley/ibm-quantum-tracker",
         default_branch:"main"
-    }, {
+    }, 
+    {
         html_url:"https://github.com/EricPedley/Fantasy-XC-V2",
         default_branch:"master"
-    }
+    },
+    {
+        html_url:"https://github.com/EricPedley/justcare",
+        default_branch:"master"
+    },
+    {
+        html_url:"https://github.com/EricPedley/First-Unity-Project",
+        default_branch:"main"
+    }//sites to add with gifs: animal run, knife guy, opengl projects, chrome extension
 ]
 window.onload=()=>addCards(customRepoList)
 
