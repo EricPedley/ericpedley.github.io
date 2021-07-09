@@ -14,7 +14,7 @@ async function getProjectDetails(repoLink,branch) {
     const readmeText = await fetch(`https://raw.githubusercontent.com/${username}/${reponame}/${branch}/README.md`).then(r=>r.text())
     try {
         const title = new RegExp(/# (.*)/).exec(readmeText)[1]//first item in returned list is the full match so we ignore it
-        const descriptionText = new RegExp(/Description:\n(.*)/).exec(readmeText)[1]
+        const descriptionText = new RegExp(/Description:?\n(.*)/).exec(readmeText)[1]
         const backgroundImageURL = new RegExp(/project screenshot]\((.*?)\)/).exec(readmeText)[1]
         const demoURL = new RegExp(/Demo Link]\((.*)\)/).exec(readmeText)[1]
         return {

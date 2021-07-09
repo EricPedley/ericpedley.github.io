@@ -13,6 +13,22 @@ const customRepoList = [
     {
         html_url:"https://github.com/EricPedley/spotify-yt-react",
         default_branch:"master"
+    },
+    {
+        html_url:"https://github.com/EricPedley/posture-detector",
+        default_branch:"main"
+    },
+    {
+        html_url:"https://github.com/EricPedley/kanyezone-bot-cpp",
+        default_branch:"main"
+    },
+    {
+        html_url:"https://github.com/EricPedley/audio-splicer",
+        default_branch:"master"
+    },
+    {
+        html_url:"https://github.com/EricPedley/ibm-quantum-tracker",
+        default_branch:"main"
     }
 ]
 window.onload=()=>addCards(customRepoList)
