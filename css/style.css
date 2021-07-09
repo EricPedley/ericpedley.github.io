@@ -1,6 +1,7 @@
 body {
     background-image:linear-gradient(to right,#FCECC9,#FEF3DC);
     overflow-x:hidden;
+    font-family: "Chakra Petch";
 }
 #footer {
     background-color:#302622;
@@ -107,9 +108,6 @@ body {
     padding-right:10px;
     padding-left:10px;
     padding-bottom:10px;
-}
-.row {
-    font-family: "Chakra Petch";
 }
 .links {
     bottom:0px;

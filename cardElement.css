@@ -1,13 +1,12 @@
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-auto-rows: minmax(300px, 1fr);
+    grid-auto-rows: 300px;
 }
 
 .card {
     position: relative;
     color: #FFFFFF;
-    font-family: sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,8 +21,7 @@
 }
 
 .card-background {
-    background-image: url("https://camo.githubusercontent.com/7102f579c4601c3086a103577db490dd344235c6fd2acffdc6ce1e44f04c929f/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f7733475372485350394c65707643745730472f67697068792e676966");
-    background-color: grey;
+    background-color: #302622;
     content: "";
     position: absolute;
     width: 100%;
@@ -38,4 +36,34 @@
     position: relative;
     transition: opacity 1s, width 0s 1s;
     overflow: hidden;
+}
+
+.card-content > a {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    padding: 2px 3px;
+    margin: 2px;
+    border-radius: 5px;
+    transition: padding 0.3s, margin 0.3s;
+}
+
+.card-content > a:link {
+    color: black;
+    text-decoration: none;
+}
+
+.card-content > a:visited {
+    color: black;
+}
+
+.card-content > a:hover {
+    text-decoration: underline;
+    margin:1px;
+    padding: 3px 5px;
+}
+
+.linkicon {
+    height: 1.1em;
+    margin-right: 0.3em;
 }
