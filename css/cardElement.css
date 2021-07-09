@@ -1,0 +1,58 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 300px;
+    padding:5px;
+}
+
+/*Dumb hack for tiny smartphone screens*/
+@media screen and (max-width:400px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        font-size:80%;
+        padding:10px;
+    }
+}
+
+.card {
+    position: relative;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: padding 0.5s, margin 0.5s;
+    margin: 10px;
+}
+
+.card:hover {
+    margin: 0;
+    padding: 10px;
+}
+
+.card-background {
+    background-color: #302622;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) brightness(70%);
+    transition: filter 1s;
+}
+
+.card-content {
+    position: relative;
+    transition: opacity 1s, width 0s 1s;
+    overflow: hidden;
+}
+
+.card-content > a {
+    color: black;
+}
+
+.linkicon {
+    height: 1.1em;
+    margin-right: 0.3em;
+}
