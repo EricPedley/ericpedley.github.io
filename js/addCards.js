@@ -23,19 +23,19 @@ const customRepoList = [
         default_branch:"main"
     },
     {
-        html_url:"https://github.com/EricPedley/audio-splicer",
-        default_branch:"master"
-    },
-    {
         html_url:"https://github.com/EricPedley/ibm-quantum-tracker",
         default_branch:"main"
     }, 
     {
-        html_url:"https://github.com/EricPedley/Fantasy-XC-V2",
+        html_url:"https://github.com/EricPedley/opengl-projects",
+        default_branch:"main"
+    },
+    {
+        html_url:"https://github.com/EricPedley/audio-splicer",
         default_branch:"master"
     },
     {
-        html_url:"https://github.com/EricPedley/justcare",
+        html_url:"https://github.com/EricPedley/Fantasy-XC-V2",
         default_branch:"master"
     },
     {
@@ -43,9 +43,22 @@ const customRepoList = [
         default_branch:"main"
     },
     {
+        html_url:"https://github.com/EricPedley/justcare",
+        default_branch:"master"
+    },
+    {
+        html_url:"https://github.com/EricPedley/animal-run-game",
+        default_branch:"master"
+    },
+    {
         html_url:"https://github.com/EricPedley/deanza-course-notifier",
         default_branch:"main"
-    }//sites to add with gifs: animal run, knife guy, opengl projects, chrome extension
+    },
+    {
+        html_url:"https://github.com/EricPedley/knife-guy-game",
+        default_branch:"master"
+    },
+    //sites to add with gifs: opengl projects, chrome extension
 ]
 window.onload=()=>addCards(customRepoList)
 

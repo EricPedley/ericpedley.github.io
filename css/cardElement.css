@@ -12,6 +12,9 @@
         font-size:80%;
         padding:10px;
     }
+    .profile-pic {
+        display:none;
+    }
 }
 
 .card {

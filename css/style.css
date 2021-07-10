@@ -6,23 +6,30 @@ body {
     height:100%;
 }
 
-nav {
-    min-height:10vh;
+/*Dumb hack for tiny smartphone screens to hide profile pic cause styling shits itself at that point*/
+@media screen and (max-width:520px) {
+    .profile-pic {
+        display:none;
+    }
 }
 
-.banner {
+nav {
+    min-height:10vh;
     background-color:#302622;
     text-align:center;
     padding:10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
-nav > h1 {
-    font-size:300%;
+h1.title {
+    font-size:3.5em;
     margin:0;
 }
 
-nav > a {
-    background-color: #FFFFFF;
+nav > div {
+    padding-left:10px;
 }
 
 a {
@@ -53,4 +60,9 @@ a:hover {
     height:100%;
     opacity:0.5;
     z-index:10;
+}
+
+.profile-pic {
+    border-radius:50%;
+    max-height:7em;
 }
