@@ -1,32 +1,22 @@
 async function addCards() {
     const user = "EricPedley"
-    const repoListRaw = await fetch(`https://raw.githubusercontent.com/${user}/${user}.github.io/master/README.md`).then(res=>res.text());
-    const repoList = new Set(repoListRaw.substring(repoListRaw.indexOf("https://github.com")).trim().split("\n- "));
-    console.log(repoList);
+    const [repoBranchDict,repoList] = await Promise.all([
+        fetch(`https://api.github.com/users/${user}/repos?per_page=100`).then(res=>res.json()).then(repoInfo=> {
+            return repoInfo.reduce((prev,curr)=> {
+                prev[curr.html_url] = curr.default_branch;
+                return prev
+            },{});
+        }),
+        fetch(`https://raw.githubusercontent.com/${user}/${user}.github.io/master/README.md`).then(res=>res.text()).then(rawText=>{
+            return rawText.substring(rawText.indexOf("https://github.com")).trim().split("\n- ");
+        })
+    ]);
     const container = document.querySelector(".card-container");
     let cardsBuffer="";
-    let numComplete=0;
-    let repo_info_list;
-    try {
-        repo_info_list = await fetch(`https://api.github.com/users/${user}/repos?per_page=100`).then(res=>res.json());
-    } catch(e) {
-        console.log(e);
-        return;
+    for(const repo of repoList) {
+        cardsBuffer+=`<project-card repo="${repo}" branch="${repoBranchDict[repo]}"></project-card>`;
     }
-    console.log(repo_info_list)
-    const repo_branch_dict = repo_info_list.reduce((prev,curr)=> {
-        prev[curr.html_url] = curr.default_branch;
-    },{})
-    for(const repo of repo_info_list) {
-        if(!repoList.has(repo.html_url)) continue;
-        numComplete++;
-        cardsBuffer+=`<project-card repo="${repo.html_url}" branch="${repo.default_branch}"></project-card>`;
-        if(numComplete==repoList.size) {
-            console.log(cardsBuffer)
-            container.innerHTML+=cardsBuffer;
-            return;
-        }
-    }
+    container.innerHTML+=cardsBuffer;
     
 }
 
