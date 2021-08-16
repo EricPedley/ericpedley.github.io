@@ -1,5 +1,4 @@
 # Portfolio Website
-![project screenshot](https://user-images.githubusercontent.com/48658337/129497006-c123e89a-343a-4151-9609-4082fc756c55.gif)
 ## Description
  A website to display all my projects. Updating it is really convenient because it loads all the content (title, demo link, image, description) dynamically from the README of each project. Every time I want to add a new one, I just need to put the appropriate information in the README of that repo and then update the list of repos to display, which is also loaded dynamically from the below section of this README.
  
