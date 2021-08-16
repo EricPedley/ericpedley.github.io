@@ -9,13 +9,13 @@
  * @param {*} repoLink 
  */
 async function getProjectDetails(repoLink,branch) {
-    const [,username,reponame] = new RegExp(/https:\/\/.*?\/(.*)\/(.*)/).exec(repoLink)//first item in returned list is the full match
+    const [,username,reponame] = new RegExp(/https:\/\/.*?\/(.*)\/(.*)/).exec(repoLink);//first item in returned list is the full match
     
-    const readmeText = await fetch(`https://raw.githubusercontent.com/${username}/${reponame}/${branch}/README.md`).then(r=>r.text())
+    const readmeText = await fetch(`https://raw.githubusercontent.com/${username}/${reponame}/${branch}/README.md`).then(r=>r.text());
     try {
         const title = new RegExp(/# (.*)/).exec(readmeText)[1]//first item in returned list is the full match so we ignore it
-        const descriptionText = new RegExp(/Description:?\n(.*)/).exec(readmeText)[1]
-        const backgroundImageURL = new RegExp(/project screenshot]\((.*?)\)/).exec(readmeText)?.[1]
+        const descriptionText = new RegExp(/Description:?\n(.*)/).exec(readmeText)[1];
+        const backgroundImageURL = new RegExp(/project screenshot]\((.*?)\)/).exec(readmeText)?.[1];
         const demoURL = new RegExp(/Demo Link]\((.*)\)/).exec(readmeText)?.[1];//optional chaining operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
         return {
             title:title,
@@ -24,14 +24,14 @@ async function getProjectDetails(repoLink,branch) {
             demoURL:demoURL
         }
     } catch(error) {
-        console.log(`failed regex match on project README for ${username}/${reponame}`)
+        console.log(`failed regex match on project README for ${username}/${reponame}`);
         console.error(error);
         return {
             title:"failed to load",
             descriptionText:`The README for this repo: ${username}/${reponame} is not formatted correctly.`,
             backgroundImageURL:"https://steamuserimages-a.akamaihd.net/ugc/914659215888655432/82DCA20555DE13B0F76E9C833110411BC60DEB3F/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
             demoURL:undefined
-        }
+        };
     }
 
 }
@@ -46,7 +46,7 @@ class Card extends HTMLElement {
 
         const sourceURL=this.getAttribute("repo");
         const branch=this.getAttribute("branch");
-        console.log(`running constructor for ${sourceURL}`)
+        console.log(`running constructor for ${sourceURL}`);
         sourceURL&&getProjectDetails(sourceURL,branch).then(({title,descriptionText,backgroundImageURL,demoURL})=>{
             titleContent.innerHTML = title;
             descriptionContent.innerHTML = descriptionText;
@@ -84,7 +84,7 @@ class Card extends HTMLElement {
             });
         });
 
-        this.className = "card"
+        this.className = "card";
         background.className = "card-background";
         titleContent.className = "card-content";
         descriptionContent.className = "card-content"

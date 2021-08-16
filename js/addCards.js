@@ -1,13 +1,16 @@
 async function addCards() {
-    const repoListRaw = await fetch("https://raw.githubusercontent.com/EricPedley/ericpedley.github.io/master/README.md").then(res=>res.text())
-    const repoList = repoListRaw.substring(repoListRaw.indexOf("https://github.com")).split("\n- ")
-    console.log(repoList)
+    const repoListRaw = await fetch("https://raw.githubusercontent.com/EricPedley/ericpedley.github.io/master/README.md").then(res=>res.text());
+    const repoList = repoListRaw.substring(repoListRaw.indexOf("https://github.com")).split("\n- ");
+    console.log(repoList);
     const container = document.querySelector(".card-container");
     let cardsBuffer="";
+    let numComplete=0;
     for(const repoURL of repoList) {
-        const extractedPart = repoURL.substring("https://github.com/".length)
-        const repoInfo = await fetch(`https://api.github.com/repos/${extractedPart}`).then(res=>res.json())
-        cardsBuffer+=`<project-card repo="${repoURL}" branch="${repoInfo.default_branch}"></project-card>`
+        const extractedPart = repoURL.substring("https://github.com/".length);
+        fetch(`https://api.github.com/repos/${extractedPart}`).then(res=>res.json()).then(repoInfo=> {
+            numComplete++
+            cardsBuffer+=`<project-card repo="${repoURL}" branch="${repoInfo.default_branch}"></project-card>`
+        });
     }
     container.innerHTML+=cardsBuffer;
 }
@@ -31,7 +34,7 @@ async function addCards() {
 
 
 
-window.onload=()=>addCards()
+window.onload=()=>addCards();
 
 // const username="EricPedley"
 // fetch(`https://api.github.com/users/${username}/repos?per_page=100`).then(r=>r.json()).then(allUserRepos=> {
