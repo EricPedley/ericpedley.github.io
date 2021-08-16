@@ -46,7 +46,7 @@ class Card extends HTMLElement {
 
         const sourceURL=this.getAttribute("repo");
         const branch=this.getAttribute("branch");
-        console.log(`running constructor for ${sourceURL}`);
+        //console.log(`running constructor for ${sourceURL}`);
         sourceURL&&getProjectDetails(sourceURL,branch).then(({title,descriptionText,backgroundImageURL,demoURL})=>{
             titleContent.innerHTML = title;
             descriptionContent.innerHTML = descriptionText;
