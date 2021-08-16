@@ -12,11 +12,9 @@ async function addCards() {
         })
     ]);
     const container = document.querySelector(".card-container");
-    let cardsBuffer="";
     for(const repo of repoList) {
-        cardsBuffer+=`<project-card repo="${repo}" branch="${repoBranchDict[repo]}"></project-card>`;
+        container.appendChild(new Card(repo,repoBranchDict[repo]));
     }
-    container.innerHTML+=cardsBuffer;
     
 }
 
