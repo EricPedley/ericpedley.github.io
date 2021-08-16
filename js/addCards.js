@@ -1,66 +1,37 @@
-function addCards(repoList) {
+async function addCards() {
+    const repoListRaw = await fetch("https://raw.githubusercontent.com/EricPedley/ericpedley.github.io/master/README.md").then(res=>res.text())
+    const repoList = repoListRaw.substring(repoListRaw.indexOf("https://github.com")).split("\n- ")
+    console.log(repoList)
     const container = document.querySelector(".card-container");
     let cardsBuffer="";
-    for(const repo of repoList) {
-        // if(!repo.description||repo.fork) 
-        //     continue;
-        cardsBuffer+=`<project-card repo="${repo.html_url}" branch="${repo.default_branch}"></project-card>`
+    for(const repoURL of repoList) {
+        const extractedPart = repoURL.substring("https://github.com/".length)
+        const repoInfo = await fetch(`https://api.github.com/repos/${extractedPart}`).then(res=>res.json())
+        cardsBuffer+=`<project-card repo="${repoURL}" branch="${repoInfo.default_branch}"></project-card>`
     }
     container.innerHTML+=cardsBuffer;
 }
 
-const customRepoList = [
-    {
-        html_url:"https://github.com/EricPedley/spotify-yt-react",
-        default_branch:"master"
-    },
-    {
-        html_url:"https://github.com/EricPedley/kanyezone-bot-cpp",
-        default_branch:"main"
-    },
-    {
-        html_url:"https://github.com/EricPedley/posture-detector",
-        default_branch:"main"
-    },
-    {
-        html_url:"https://github.com/EricPedley/ibm-quantum-tracker",
-        default_branch:"main"
-    }, 
-    {
-        html_url:"https://github.com/EricPedley/opengl-projects",
-        default_branch:"main"
-    },
-    {
-        html_url:"https://github.com/EricPedley/audio-splicer",
-        default_branch:"master"
-    },
-    {
-        html_url:"https://github.com/EricPedley/Fantasy-XC-V2",
-        default_branch:"master"
-    },
-    {
-        html_url:"https://github.com/EricPedley/First-Unity-Project",
-        default_branch:"main"
-    },
-    {
-        html_url:"https://github.com/EricPedley/justcare",
-        default_branch:"master"
-    },
-    {
-        html_url:"https://github.com/EricPedley/animal-run-game",
-        default_branch:"master"
-    },
-    {
-        html_url:"https://github.com/EricPedley/deanza-course-notifier",
-        default_branch:"main"
-    },
-    {
-        html_url:"https://github.com/EricPedley/knife-guy-game",
-        default_branch:"master"
-    },
-    //sites to add with gifs: opengl projects, chrome extension
-]
-window.onload=()=>addCards(customRepoList)
+// const customRepoList = [
+//     "https://github.com/EricPedley/spotify-yt-react",
+//      "https://github.com/EricPedley/kanyezone-bot-cpp",
+//     "https://github.com/EricPedley/posture-detector",
+//     "https://github.com/EricPedley/ibm-quantum-tracker",
+//     "https://github.com/EricPedley/opengl-projects",
+//     "https://github.com/EricPedley/audio-splicer",
+//     "https://github.com/EricPedley/Fantasy-XC-V2",
+//     "https://github.com/EricPedley/First-Unity-Project",
+//     "https://github.com/EricPedley/justcare",
+//     "https://github.com/EricPedley/animal-run-game",
+//     "https://github.com/EricPedley/deanza-course-notifier",
+//     "https://github.com/EricPedley/knife-guy-game",
+//     "https://github.com/EricPedley/DeepFinder"
+// ]
+
+
+
+
+window.onload=()=>addCards()
 
 // const username="EricPedley"
 // fetch(`https://api.github.com/users/${username}/repos?per_page=100`).then(r=>r.json()).then(allUserRepos=> {
