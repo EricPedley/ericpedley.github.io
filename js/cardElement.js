@@ -61,7 +61,7 @@ class Card extends HTMLElement {
                     Demo
                 </a>`;
             this.addEventListener("mouseenter", () => {
-                background.style.filter = "blur(2px) brightness(40%)";
+                background.style.filter = "blur(2px) brightness(var(--card-dim))";
     
                 titleContent.style.opacity = "0%";
                 titleContent.style.width = "0";
@@ -72,7 +72,7 @@ class Card extends HTMLElement {
                 descriptionContent.style.height = "auto";
             });
             this.addEventListener("mouseleave", () => {
-                background.style.filter = "blur(2px) brightness(70%)";
+                background.style.filter = "blur(2px) brightness(var(--card-bright))";
     
                 titleContent.style.opacity = "100%";
                 titleContent.style.width = "auto";

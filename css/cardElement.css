@@ -34,6 +34,8 @@
 }
 
 .card-background {
+    --card-bright: 60%;
+    --card-dim: 30%;
     background-color: #302622;
     content: "";
     position: absolute;
@@ -41,7 +43,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    filter: blur(2px) brightness(70%);
+    filter: blur(2px) brightness(var(--card-bright));
     transition: filter 1s;
 }
 
