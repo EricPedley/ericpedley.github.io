@@ -27,8 +27,8 @@ async function getProjectDetails(repoLink,branch) {
         console.log(`failed regex match on project README for ${username}/${reponame}`);
         console.error(error);
         return {
-            title:"failed to load",
-            descriptionText:`The README for this repo: ${username}/${reponame} is not formatted correctly.`,
+            title:`Failed to load ${username}/${reponame}`,
+            descriptionText:`Error message: ${error}`,
             backgroundImageURL:"https://steamuserimages-a.akamaihd.net/ugc/914659215888655432/82DCA20555DE13B0F76E9C833110411BC60DEB3F/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
             demoURL:undefined
         };
@@ -37,15 +37,15 @@ async function getProjectDetails(repoLink,branch) {
 }
 
 class Card extends HTMLElement {
-    constructor() {
+    constructor(repoURL,defaultBranch) {
         super();
 
         const background = document.createElement("div");
         const titleContent = document.createElement("h1");
         const descriptionContent = document.createElement("div");
 
-        const sourceURL=this.getAttribute("repo");
-        const branch=this.getAttribute("branch");
+        const sourceURL=repoURL||this.getAttribute("repo");
+        const branch=defaultBranch||this.getAttribute("branch");
         //console.log(`running constructor for ${sourceURL}`);
         sourceURL&&getProjectDetails(sourceURL,branch).then(({title,descriptionText,backgroundImageURL,demoURL})=>{
             titleContent.innerHTML = title;
