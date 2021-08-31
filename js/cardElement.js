@@ -60,7 +60,7 @@ class Card extends HTMLElement {
                 <br><a target="_blank" href="${demoURL}"><img class="linkicon" src="images/external.png">
                     Demo
                 </a>`;
-            this.addEventListener("mouseenter", () => {
+            this.addEventListener("mouseover", () => {
                 background.style.filter = "blur(2px) brightness(var(--card-dim))";
     
                 titleContent.style.opacity = "0%";
@@ -71,7 +71,7 @@ class Card extends HTMLElement {
                 descriptionContent.style.width = "auto";
                 descriptionContent.style.height = "auto";
             });
-            this.addEventListener("mouseleave", () => {
+            this.addEventListener("mouseout", () => {
                 background.style.filter = "blur(2px) brightness(var(--card-bright))";
     
                 titleContent.style.opacity = "100%";
