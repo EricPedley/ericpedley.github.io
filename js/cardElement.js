@@ -6,7 +6,7 @@
  *  backgroundImageURL: string,
  *  demoURL: string
  * }
- * @param {*} repoLink 
+ * @param {string} repoLink 
  */
 async function getProjectDetails(repoLink,branch) {
     const [,username,reponame] = new RegExp(/https:\/\/.*?\/(.*)\/(.*)/).exec(repoLink);//first item in returned list is the full match
@@ -118,11 +118,17 @@ class Card extends HTMLElement {
         }
         const boundingX = document.body.offsetWidth;
         const boundingY = document.body.offsetHeight;
-        if(this.x+this.startX+this.velX<0||this.x+this.startX+this.offsetWidth+this.velX>boundingX) {
-            this.velX=-this.velX;
+        if(this.x+this.startX+this.velX<0) {
+            this.velX=Math.abs(this.velX);
+        } else if(this.x+this.startX+this.offsetWidth+this.velX>boundingX) {
+            this.velX=-Math.abs(this.velX);
         } else {
-            this.x+=this.velX;
+            if(this.xCollision) {
+                this.xCollision=false;
+                this.velX=-this.velX;
+            }
         }
+        this.x+=this.velX;
         if(this.y+this.startY+this.velY<0||this.y+this.startY+this.offsetHeight+this.velY>boundingY) {
             this.velY=-this.velY;
         } else {
@@ -130,11 +136,19 @@ class Card extends HTMLElement {
         }
         this.style.left=`${this.x}px`;
         this.style.top=`${this.y}px`;
-        if(this.url=="https://github.com/EricPedley/spotify-yt-react")
-            console.log(boundingX);
     }
     collide(other) {
-        console.log(this.url, other.url);
+        const newOtherX = other.x+other.startX+other.velX;
+        const newOtherY = other.y+other.startY+other.velY;
+        const hasVerticalOverlap = this.y+this.startY<newOtherY+other.offsetHeight&&this.y+this.startY+this.offsetHeight>newOtherY;
+        if(this.x+this.startX<newOtherX+other.offsetWidth
+            ||this.x+this.startX+this.offsetWidth>newOtherX
+            &&hasVerticalOverlap) {//if horizontal collision
+                if(this.url=="https://github.com/EricPedley/deanza-course-notifier")
+                    console.log(`collision with ${other.url}, ${this.startX+this.x},${this.startY+this.y}|${newOtherX},${newOtherY}`);
+                this.velX=-this.velX;
+                other.xCollision=true;
+        }
     }
 }
 

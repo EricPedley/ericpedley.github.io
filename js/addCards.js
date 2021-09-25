@@ -19,9 +19,9 @@ async function addCards() {
         const nodes = container.childNodes;
         for(let i=0;i<nodes.length;i++) {
             nodes[i].update();
-            // for(let j=i+1;j<nodes.length;j++) {
-            //     nodes[i].collide(nodes[j]);
-            // }
+            for(let j=i+1;j<nodes.length;j++) {
+                nodes[i].collide(nodes[j]);
+            }
         }
     }
     setInterval(physicsLoop,100);
