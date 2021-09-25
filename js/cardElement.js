@@ -39,7 +39,17 @@ async function getProjectDetails(repoLink,branch) {
 class Card extends HTMLElement {
     constructor(repoURL,defaultBranch) {
         super();
+        this.url = repoURL;
 
+        //physics stuff
+        function randomDirection() {return Math.round(Math.random())*2-1;}//returns either 1 or -1
+        this.x=0;
+        this.velX=randomDirection()*3;
+        this.y=0;
+        this.velY=randomDirection()*3; 
+
+
+        //DOM stuff
         const background = document.createElement("div");
         const titleContent = document.createElement("h1");
         const descriptionContent = document.createElement("div");
@@ -99,7 +109,32 @@ class Card extends HTMLElement {
         this.appendChild(background);
         this.appendChild(titleContent);
         this.appendChild(descriptionContent);
-
+    }
+    update() {
+        if(!this.startX) {
+            const rect = this.getBoundingClientRect();
+            this.startX=rect.x;
+            this.startY=rect.y;
+        }
+        const boundingX = document.body.offsetWidth;
+        const boundingY = document.body.offsetHeight;
+        if(this.x+this.startX+this.velX<0||this.x+this.startX+this.offsetWidth+this.velX>boundingX) {
+            this.velX=-this.velX;
+        } else {
+            this.x+=this.velX;
+        }
+        if(this.y+this.startY+this.velY<0||this.y+this.startY+this.offsetHeight+this.velY>boundingY) {
+            this.velY=-this.velY;
+        } else {
+            this.y+=this.velY;
+        }
+        this.style.left=`${this.x}px`;
+        this.style.top=`${this.y}px`;
+        if(this.url=="https://github.com/EricPedley/spotify-yt-react")
+            console.log(boundingX);
+    }
+    collide(other) {
+        console.log(this.url, other.url);
     }
 }
 

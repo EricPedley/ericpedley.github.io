@@ -15,8 +15,18 @@ async function addCards() {
     for(const repo of repoList) {
         container.appendChild(new Card(repo,repoBranchDict[repo]));
     }
-    
+    function physicsLoop() {
+        const nodes = container.childNodes;
+        for(let i=0;i<nodes.length;i++) {
+            nodes[i].update();
+            // for(let j=i+1;j<nodes.length;j++) {
+            //     nodes[i].collide(nodes[j]);
+            // }
+        }
+    }
+    setInterval(physicsLoop,100);
 }
+
 
 // const customRepoList = [
 //     "https://github.com/EricPedley/spotify-yt-react",
