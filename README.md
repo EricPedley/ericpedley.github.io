@@ -6,6 +6,7 @@
 - https://github.com/EricPedley/spotify-yt-react
 - https://github.com/EricPedley/kanyezone-bot-cpp
 - https://github.com/EricPedley/posture-detector
+- https://github.com/EricPedley/zotmeal-backend
 - https://github.com/EricPedley/ibm-quantum-tracker
 - https://github.com/EricPedley/opengl-projects
 - https://github.com/EricPedley/audio-splicer
