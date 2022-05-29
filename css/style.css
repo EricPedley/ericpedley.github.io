@@ -1,35 +1,48 @@
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, rgba(6, 1, 88, 1) 0%, rgba(71, 71, 218, 1) 43%, rgba(0, 212, 255, 1) 100%);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 20px;
+}
+
 body {
-    margin:0;
-    background: rgb(6,1,88);
-    background: linear-gradient(135deg, rgba(6,1,88,1) 0%, rgba(71,71,218,1) 43%, rgba(0,212,255,1) 100%);
+    margin: 0;
+    background: rgb(6, 1, 88);
+    background: linear-gradient(135deg, rgba(6, 1, 88, 1) 0%, rgba(71, 71, 218, 1) 43%, rgba(0, 212, 255, 1) 100%);
     font-family: "Chakra Petch";
-    color:#FFFFFF;
-    height:100%;
+    color: #FFFFFF;
+    min-height: 100vh;
 }
 
 /*Dumb hack for tiny smartphone screens to hide profile pic cause styling shits itself at that point*/
 @media screen and (max-width:520px) {
     .profile-pic {
-        display:none;
+        display: none;
     }
 }
 
 nav {
-    min-height:10vh;
-    text-align:center;
-    padding:10px;
-    display:flex;
+    min-height: 10vh;
+    text-align: center;
+    padding: 10px;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
 h1.title {
-    font-size:3.5em;
-    margin:0;
+    font-size: 3.5em;
+    margin: 0;
 }
 
-nav > div {
-    padding-left:10px;
+nav>div {
+    padding-left: 10px;
 }
 
 a {
@@ -48,7 +61,7 @@ a:link {
 
 a:hover {
     text-decoration: underline;
-    margin:1px;
+    margin: 1px;
     padding: 3px 5px;
 }
 
@@ -63,6 +76,6 @@ a:hover {
 } */
 
 .profile-pic {
-    border-radius:50%;
-    max-height:7em;
+    border-radius: 50%;
+    max-height: 7em;
 }
