@@ -53,11 +53,11 @@ class Card extends HTMLElement {
             background.style.backgroundImage = backgroundImageURL? `url("${backgroundImageURL}")`:'url("images/default_image.png")';
             descriptionContent.innerHTML += `
             <br><br><a target="_blank" href="${sourceURL}">
-                <img class="linkicon" src="images/github-logo.png">Source Code
+                <img alt="github logo" class="linkicon" src="images/github-logo.png">Source Code
             </a>`;
             if(demoURL)
                 descriptionContent.innerHTML+= `
-                <br><a target="_blank" href="${demoURL}"><img class="linkicon" src="images/external.png">
+                <a target="_blank" href="${demoURL}"><img alt="external link icon" class="linkicon" src="images/external.png">
                     Demo
                 </a>`;
             this.addEventListener("mouseover", () => {
