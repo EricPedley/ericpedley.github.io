@@ -26,6 +26,8 @@
     text-align: center;
     transition: padding 0.5s, margin 0.5s;
     margin: 10px;
+    transform-style: preserve-3d;
+
 }
 
 .card:hover {
@@ -36,7 +38,6 @@
 .card-background {
     --card-bright: 60%;
     --card-dim: 30%;
-    background-color: #302622;
     content: "";
     position: absolute;
     width: 100%;
@@ -45,13 +46,15 @@
     background-position: center;
     filter: blur(2px) brightness(var(--card-bright));
     transition: filter 1s;
-    border-radius: 15px;    
+    border-radius: 15px;
 }
 
 .card-content {
     position: relative;
     transition: opacity 1s, width 0s 1s;
     overflow: hidden;
+    transform: translateZ(30px);
+    margin: 0 10px;
 }
 
 .card-content > a {

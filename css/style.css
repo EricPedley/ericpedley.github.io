@@ -7,7 +7,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: white;
+    background: rgba(255,255,255,0.4);
     border-radius: 20px;
 }
 
@@ -15,9 +15,10 @@ body {
     margin: 0;
     background: rgb(6, 1, 88);
     background: linear-gradient(135deg, rgba(6, 1, 88, 1) 0%, rgba(71, 71, 218, 1) 43%, rgba(0, 212, 255, 1) 100%);
-    font-family: "Chakra Petch";
+    font-family: 'Cascadia Mono', sans-serif;;
     color: #FFFFFF;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /*Dumb hack for tiny smartphone screens to hide profile pic cause styling shits itself at that point*/
@@ -38,7 +39,17 @@ nav {
 
 h1.title {
     font-size: 3.5em;
-    margin: 0;
+    margin: 0 0 10px 0;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+h1.card-content {
+    background: rgba(0,0,0,0.3);
+    padding: 5px;
+    border-radius: 10px;
 }
 
 nav>div {
