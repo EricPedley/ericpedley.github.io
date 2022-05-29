@@ -1,19 +1,11 @@
 async function addCards() {
     const user = "EricPedley"
-    const [repoBranchDict,repoList] = await Promise.all([
-        fetch(`https://api.github.com/users/${user}/repos?per_page=100`).then(res=>res.json()).then(repoInfo=> {
-            return repoInfo.reduce((prev,curr)=> {
-                prev[curr.html_url] = curr.default_branch;
-                return prev
-            },{});
-        }),
-        fetch(`https://raw.githubusercontent.com/${user}/${user}.github.io/master/README.md`).then(res=>res.text()).then(rawText=>{
-            return rawText.substring(rawText.indexOf("https://github.com")).trim().split("\n- ");
-        })
-    ]);
+    const repoList = await fetch(`https://raw.githubusercontent.com/${user}/${user}.github.io/master/README.md`).then(res=>res.text()).then(rawText=>{
+                                return rawText.substring(rawText.indexOf("https://github.com")).trim().split("\n- ");
+                            })
     const container = document.querySelector(".card-container");
     for(const repo of repoList) {
-        container.appendChild(new Card(repo,repoBranchDict[repo]));
+        container.appendChild(new Card(repo,'main'));
     }
     if (matchMedia('(hover: hover) and (pointer: fine)').matches)
         VanillaTilt.init(document.querySelectorAll(".card"), {
