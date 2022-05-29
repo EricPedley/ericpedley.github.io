@@ -9,6 +9,7 @@
 - https://github.com/EricPedley/zotmeal-backend
 - https://github.com/EricPedley/ibm-quantum-tracker
 - https://github.com/EricPedley/opengl-projects
+- https://github.com/EricPedley/Quick-Review
 - https://github.com/EricPedley/audio-splicer
 - https://github.com/EricPedley/Fantasy-XC-V2
 - https://github.com/EricPedley/First-Unity-Project
