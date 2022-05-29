@@ -55,6 +55,9 @@
     overflow: hidden;
     transform: translateZ(30px);
     margin: 0 10px;
+}
+
+h1.card-content {
     max-width: 80%;
 }
 
