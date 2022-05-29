@@ -45,6 +45,7 @@
     background-position: center;
     filter: blur(2px) brightness(var(--card-bright));
     transition: filter 1s;
+    border-radius: 15px;    
 }
 
 .card-content {

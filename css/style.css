@@ -1,6 +1,7 @@
 body {
     margin:0;
-    background-image:linear-gradient(to right,#FCECC9,#FEF3DD);
+    background: rgb(6,1,88);
+    background: linear-gradient(135deg, rgba(6,1,88,1) 0%, rgba(71,71,218,1) 43%, rgba(0,212,255,1) 100%);
     font-family: "Chakra Petch";
     color:#FFFFFF;
     height:100%;
@@ -15,7 +16,6 @@ body {
 
 nav {
     min-height:10vh;
-    background-color:#302622;
     text-align:center;
     padding:10px;
     display:flex;
