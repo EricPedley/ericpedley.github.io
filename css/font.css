@@ -5,5 +5,5 @@
   font-style: normal;
   font-weight: 400;
   src: local('Cascadia Mono'), url('https://fonts.cdnfonts.com/s/37910/CascadiaMono.woff') format('woff');
+  font-display: swap;
 }
-

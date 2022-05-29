@@ -50,7 +50,6 @@ class Card extends HTMLElement {
         sourceURL&&getProjectDetails(sourceURL,branch).then(({title,descriptionText,backgroundImageURL,demoURL})=>{
             titleContent.innerHTML = title;
             descriptionContent.innerHTML = descriptionText;
-            background.style.backgroundImage = backgroundImageURL? `url("${backgroundImageURL}")`:'url("images/default_image.png")';
             descriptionContent.innerHTML += `
             <br><br><a target="_blank" href="${sourceURL}">
                 <img alt="github logo" class="linkicon" src="images/github-logo.png">Source Code
@@ -82,6 +81,7 @@ class Card extends HTMLElement {
                 descriptionContent.style.width = "0";
                 descriptionContent.style.height = "0";
             });
+            background.style.backgroundImage = backgroundImageURL? `url("${backgroundImageURL}")`:'url("images/default_image.png")';
         });
 
         this.className = "card";
