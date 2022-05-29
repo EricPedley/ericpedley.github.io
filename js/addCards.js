@@ -15,11 +15,12 @@ async function addCards() {
     for(const repo of repoList) {
         container.appendChild(new Card(repo,repoBranchDict[repo]));
     }
-	VanillaTilt.init(document.querySelectorAll(".card"), {
-		max: 15,
-		speed: 400,
-        reverse: true
-	});
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches)
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 15,
+            speed: 400,
+            reverse: true
+        });
     
 }
 
@@ -44,11 +45,12 @@ async function addCards() {
 
 window.onload=()=> {
     addCards();
-	VanillaTilt.init(document.querySelector(".profile-pic"), {
-		max: 15,
-		speed: 400,
-        reverse: true
-	});
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches)
+        VanillaTilt.init(document.querySelector(".profile-pic"), {
+            max: 15,
+            speed: 400,
+            reverse: true
+        });
 }
 
 // const username="EricPedley"
