@@ -55,6 +55,7 @@
     overflow: hidden;
     transform: translateZ(30px);
     margin: 0 10px;
+    max-width: 80%;
 }
 
 .card-content > a {
