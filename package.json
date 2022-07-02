@@ -1,0 +1,25 @@
+{
+  "name": "ericpedley.github.io",
+  "version": "1.0.0",
+  "description": "Eric Pedley's personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricPedley/ericpedley.github.io.git"
+  },
+  "author": "Eric Pedley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricPedley/ericpedley.github.io/issues"
+  },
+  "homepage": "https://github.com/EricPedley/ericpedley.github.io#readme",
+  "dependencies": {
+    "webpack": "^5.73.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
+  }
+}
