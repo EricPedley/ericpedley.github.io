@@ -9,11 +9,35 @@
         Using this markdown rendering library: https://github.com/zerodevx/zero-md
     -->
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
-    <title>Blog</title>
+    <link rel="stylesheet" href="../css/font.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+
+    <title>Eric's Blog</title>
 </head>
 
 <body>
-    <zero-md src="helloWorld.md"></zero-md>
+    <nav>
+        <img src="../images/profilepic.jpeg" class="profile-pic"><!--Github profile pic is at https://avatars.githubusercontent.com/u/48658337-->
+        <div>
+            <h1 class="title">Eric's Blog</h1>
+            <a href="https://github.com/EricPedley" target="_blank">
+                <img class="linkicon" src="../images/github-logo.png">
+                Github Profile
+            </a>
+            <a href="https://www.linkedin.com/in/ericpedley/" target="_blank" style="background-color:#0a66c2;color:white;">
+                <img class="linkicon" src="../images/linkedin icon opaque.png" style="border-radius:4px;">
+                LinkedIn
+            </a>
+            <a href="..">
+                <img class="linkicon" src="../images/internal.png" style="border-radius:4px;">
+                Projects
+            </a>
+        </div>
+    </nav>
+    <div id="container">
+        <zero-md src="helloWorld.md"></zero-md>
+    </div>
 </body>
 
 </html>
