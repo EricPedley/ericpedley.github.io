@@ -1,0 +1,10 @@
+#container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+zero-md {
+    max-width: max(500px,50%);
+    margin: auto;
+}
