@@ -1,3 +1,5 @@
+import Card from './cardElement'
+
 async function addCards() {
     const user = "EricPedley"
     const repoList = [
@@ -32,17 +34,13 @@ async function addCards() {
 }
 
 
-
-
-window.onload=()=> {
-    addCards();
-    if (matchMedia('(hover: hover) and (pointer: fine)').matches)
-        VanillaTilt.init(document.querySelector(".profile-pic"), {
-            max: 15,
-            speed: 400,
-            reverse: true
-        });
-}
+addCards();
+if (matchMedia('(hover: hover) and (pointer: fine)').matches)
+    VanillaTilt.init(document.querySelector(".profile-pic"), {
+        max: 15,
+        speed: 400,
+        reverse: true
+    });
 
 // const username="EricPedley"
 // fetch(`https://api.github.com/users/${username}/repos?per_page=100`).then(r=>r.json()).then(allUserRepos=> {
