@@ -1,0 +1,9 @@
+/* Ripped straight from https://fonts.cdnfonts.com/css/cascadia-mono to improve page load times by about 100 ms*/
+
+@font-face {
+  font-family: 'Cascadia Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cascadia Mono'), url('https://fonts.cdnfonts.com/s/37910/CascadiaMono.woff') format('woff');
+  font-display: swap;
+}

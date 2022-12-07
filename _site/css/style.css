@@ -1,0 +1,92 @@
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, rgba(6, 1, 88, 1) 0%, rgba(71, 71, 218, 1) 43%, rgba(0, 212, 255, 1) 100%);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.4);
+    border-radius: 20px;
+}
+
+body {
+    margin: 0;
+    background: rgb(6, 1, 88);
+    background: linear-gradient(135deg, rgba(6, 1, 88, 1) 0%, rgba(71, 71, 218, 1) 43%, rgba(0, 212, 255, 1) 100%);
+    font-family: 'Cascadia Mono', sans-serif;;
+    color: #FFFFFF;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/*Dumb hack for tiny smartphone screens to hide profile pic cause styling shits itself at that point*/
+@media screen and (max-width:520px) {
+    .profile-pic {
+        display: none;
+    }
+}
+
+nav {
+    min-height: 10vh;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1.title {
+    font-size: 3.5em;
+    margin: 0 0 10px 0;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+h1.card-content {
+    background: rgba(0,0,0,0.3);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+nav>div {
+    padding-left: 10px;
+}
+
+a {
+    display: inline-flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 2px 3px;
+    margin: 2px;
+    border-radius: 5px;
+    transition: padding 0.3s, margin 0.3s;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    margin: 1px;
+    padding: 3px 5px;
+}
+
+/* #fader {
+    position:absolute;
+    background-color: #000000;
+    transition: opacity 0.5s;
+    width:100%;
+    height:100%;
+    opacity:0.5;
+    z-index:10;
+} */
+
+.profile-pic {
+    border-radius: 50%;
+    max-height: 7em;
+}
