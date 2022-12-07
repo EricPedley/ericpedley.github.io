@@ -61,7 +61,7 @@ Textbook: https://www.jirka.org/diffyqs/diffyqs.pdf
     - $$mx''+cx'+kx=F(t)$$
     - "Forced" := $F(t)$ is nonzero
     - "Damped" := $c$ is nonzero
-    - $w_0=\sqrt{\frac{k}{m}} = $ "angular frequency"
+    - $w_0=\sqrt{\frac{k}{m}}$ "angular frequency"
     - When F(t) = 0:
         - Overdamped: $c^2-4km>0$, critically damped when equal to zero, underdamped when less than zero.
 - (2.5) Nonhomogenous equations
