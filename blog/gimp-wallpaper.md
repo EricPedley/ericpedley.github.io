@@ -31,4 +31,4 @@ After that, I got rid of the parts of the "light" transparency mask that were be
 
 ![image](../images/gimp-wallpaper-blog/arch-window-bg.png)
 
-And, that's it! Feel free to download the xcf file here: https://ericpedley.github.io/images/gimp-wallpaper-blog/arch-window-bg.xcf and customize it yourself!
+And, that's it! Feel free to download the xcf file here: https://github.com/EricPedley/ericpedley.github.io/blob/main/images/gimp-wallpaper-blog/arch-window-bg.xcf?raw=true and customize it yourself!
