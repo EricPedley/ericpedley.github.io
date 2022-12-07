@@ -1,4 +1,4 @@
-# My Coding Origin Story
+# How I got into coding
 
 I thought it would be neat to explain how I ended up where I am now, interning at Amazon and super involved in CS-related extracurriculars at UCI.
 
