@@ -1,6 +1,8 @@
 async function addCards() {
     const user = "EricPedley"
     const repoList = [
+        "https://raw.githubusercontent.com/EricPedley/ericpedley.github.io/main/extra_projects/antalmanac.md",
+        "https://raw.githubusercontent.com/EricPedley/ericpedley.github.io/main/extra_projects/uav_forge.md",
         "https://github.com/EricPedley/spotify-yt-react",
         "https://github.com/EricPedley/kanyezone-bot-cpp",
         "https://github.com/EricPedley/posture-detector",

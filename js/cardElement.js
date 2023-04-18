@@ -9,9 +9,13 @@
  * @param {*} repoLink 
  */
 async function getProjectDetails(repoLink,branch) {
-    const [,username,reponame] = new RegExp(/https:\/\/.*?\/(.*)\/(.*)/).exec(repoLink);//first item in returned list is the full match
-    
-    const readmeText = await fetch(`https://raw.githubusercontent.com/${username}/${reponame}/${branch}/README.md`).then(r=>r.text());
+    let readmeText;
+    if(repoLink.endsWith(".md")) {
+        readmeText = await fetch(repoLink).then(r=>r.text());
+    } else {
+        const [,username,reponame] = new RegExp(/https:\/\/.*?\/(.*)\/(.*)/).exec(repoLink);//first item in returned list is the full match
+        readmeText = await fetch(`https://raw.githubusercontent.com/${username}/${reponame}/${branch}/README.md`).then(r=>r.text());
+    }
     try {
         const title = new RegExp(/# (.*)/).exec(readmeText)[1]//first item in returned list is the full match so we ignore it
         const descriptionText = new RegExp(/Description:?\n(.*)/).exec(readmeText)[1];
