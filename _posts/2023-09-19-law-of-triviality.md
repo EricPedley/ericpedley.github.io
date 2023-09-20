@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Reading List"
+title:  "My Problem with the Law of Triviality"
 date:   2023-09-19
 ---
 
