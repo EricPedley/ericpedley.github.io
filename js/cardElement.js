@@ -44,66 +44,50 @@ class Card extends HTMLElement {
     constructor(repoURL,defaultBranch) {
         super();
 
-        const background = document.createElement("div");
-        const titleContent = document.createElement("h1");
-        const descriptionContent = document.createElement("div");
-
         const sourceURL=repoURL||this.getAttribute("repo");
         const branch=defaultBranch||this.getAttribute("branch");
-        //console.log(`running constructor for ${sourceURL}`);
-        sourceURL&&getProjectDetails(sourceURL,branch).then(({title,descriptionText,backgroundImageURL,demoURL})=>{
-            titleContent.innerHTML = title;
-            descriptionContent.innerHTML = descriptionText;
-            descriptionContent.innerHTML += `
-            <br><br><a target="_blank" href="${sourceURL}">
-                <img alt="github logo" class="linkicon" src="images/github-logo.png">Source Code
-            </a>`;
-            if(demoURL)
-                descriptionContent.innerHTML+= `
-                <a target="_blank" href="${demoURL}"><img alt="external link icon" class="linkicon" src="images/external.png">
-                    Demo
+
+        // Create card structure
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const thumbnail = document.createElement("div");
+        thumbnail.className = "card-thumbnail";
+
+        const info = document.createElement("div");
+        info.className = "card-info";
+
+        const titleEl = document.createElement("h2");
+        titleEl.className = "card-title";
+        titleEl.textContent = "Loading...";
+
+        const descriptionEl = document.createElement("div");
+        descriptionEl.className = "card-description";
+
+        info.appendChild(titleEl);
+        info.appendChild(descriptionEl);
+
+        card.appendChild(thumbnail);
+        card.appendChild(info);
+
+        this.appendChild(card);
+
+        if (sourceURL) {
+            getProjectDetails(sourceURL,branch).then(({title,descriptionText,backgroundImageURL,demoURL})=>{
+                titleEl.textContent = title;
+                descriptionEl.innerHTML = descriptionText;
+                descriptionEl.innerHTML += `
+                <br><br><a target="_blank" href="${sourceURL}">
+                    <img alt="github logo" class="linkicon" src="images/github-logo.png">Source Code
                 </a>`;
-            this.addEventListener("mouseover", () => {
-                background.style.filter = "blur(2px) brightness(var(--card-dim))";
-    
-                titleContent.style.opacity = "0%";
-                titleContent.style.width = "0";
-                titleContent.style.height = "0";
-    
-                descriptionContent.style.opacity = "100%";
-                descriptionContent.style.width = "auto";
-                descriptionContent.style.height = "auto";
+                if(demoURL)
+                    descriptionEl.innerHTML+= `
+                    <a target="_blank" href="${demoURL}"><img alt="external link icon" class="linkicon" src="images/external.png">
+                        Demo
+                    </a>`;
+                thumbnail.style.backgroundImage = backgroundImageURL? `url("${backgroundImageURL}")`:'url("images/default_image.png")';
             });
-            this.addEventListener("mouseout", () => {
-                background.style.filter = "blur(2px) brightness(var(--card-bright))";
-    
-                titleContent.style.opacity = "100%";
-                titleContent.style.width = "auto";
-                titleContent.style.height = "auto";
-    
-                descriptionContent.style.opacity = "0%";
-                descriptionContent.style.width = "0";
-                descriptionContent.style.height = "0";
-            });
-            background.style.backgroundImage = backgroundImageURL? `url("${backgroundImageURL}")`:'url("images/default_image.png")';
-        });
-
-        this.className = "card";
-        background.className = "card-background";
-        titleContent.className = "card-content";
-        descriptionContent.className = "card-content"
-        titleContent.innerHTML = "Loading...";
-
-
-        //titleContent.style.fontSize = "300%";
-
-        descriptionContent.style.width = 0;
-        descriptionContent.style.opacity = 0;
-
-        this.appendChild(background);
-        this.appendChild(titleContent);
-        this.appendChild(descriptionContent);
-
+        }
     }
 }
 
