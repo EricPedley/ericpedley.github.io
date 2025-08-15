@@ -77,12 +77,12 @@ class Card extends HTMLElement {
                 titleEl.textContent = title;
                 descriptionEl.innerHTML = descriptionText;
                 descriptionEl.innerHTML += `
-                <br><br><a target="_blank" href="${sourceURL}">
-                    <img alt="github logo" class="linkicon" src="/images/github-logo.png">Source Code
+                <br><br><a class="link" target="_blank" href="${sourceURL}">
+                    Source Code
                 </a>`;
                 if(demoURL)
                     descriptionEl.innerHTML+= `
-                    <a target="_blank" href="${demoURL}"><img alt="external link icon" class="linkicon" src="/images/external.png">
+                    <a class="link" target="_blank" href="${demoURL}">
                         Demo
                     </a>`;
                 // Ensure absolute path for thumbnail
