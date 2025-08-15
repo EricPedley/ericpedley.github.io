@@ -33,7 +33,7 @@ async function getProjectDetails(repoLink,branch) {
         return {
             title:`Failed to load ${username}/${reponame}`,
             descriptionText:`Error message: ${error}`,
-            backgroundImageURL:"https://steamuserimages-a.akamaihd.net/ugc/914659215888655432/82DCA20555DE13B0F76E9C833110411BC60DEB3F/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+            backgroundImageURL:"/images/default_image.png",
             demoURL:undefined
         };
     }
@@ -78,14 +78,19 @@ class Card extends HTMLElement {
                 descriptionEl.innerHTML = descriptionText;
                 descriptionEl.innerHTML += `
                 <br><br><a target="_blank" href="${sourceURL}">
-                    <img alt="github logo" class="linkicon" src="images/github-logo.png">Source Code
+                    <img alt="github logo" class="linkicon" src="/images/github-logo.png">Source Code
                 </a>`;
                 if(demoURL)
                     descriptionEl.innerHTML+= `
-                    <a target="_blank" href="${demoURL}"><img alt="external link icon" class="linkicon" src="images/external.png">
+                    <a target="_blank" href="${demoURL}"><img alt="external link icon" class="linkicon" src="/images/external.png">
                         Demo
                     </a>`;
-                thumbnail.style.backgroundImage = backgroundImageURL? `url("${backgroundImageURL}")`:'url("images/default_image.png")';
+                // Ensure absolute path for thumbnail
+                let thumbURL = backgroundImageURL;
+                if(thumbURL && !thumbURL.startsWith('http')) {
+                    thumbURL = '/' + thumbURL.replace(/^\\/+/, '');
+                }
+                thumbnail.style.backgroundImage = thumbURL? `url("${thumbURL}")`:'url("/images/default_image.png")';
             });
         }
     }
