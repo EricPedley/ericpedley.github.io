@@ -60,6 +60,14 @@
     font-weight: 500;
 }
 
+.linkicon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
 .link:hover {
     text-decoration: underline;
 }
