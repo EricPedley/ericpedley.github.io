@@ -88,7 +88,7 @@ class Card extends HTMLElement {
                 // Ensure absolute path for thumbnail
                 let thumbURL = backgroundImageURL;
                 if(thumbURL && !thumbURL.startsWith('http')) {
-                    thumbURL = '/' + thumbURL.replace(/^\\/+/, '');
+                    thumbURL = '/' + thumbURL.replace(/^\/+/, '');
                 }
                 thumbnail.style.backgroundImage = thumbURL? `url("${thumbURL}")`:'url("/images/default_image.png")';
             });
