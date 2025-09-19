@@ -12,3 +12,11 @@ Teleop has been done a whopping _5_ times at K-Scale Labs before this project. I
 - https://github.com/kscalelabs/teleop_vaishak_repo_temp
 - https://github.com/kscalelabs/kbotv2_teleop
 - https://github.com/kscalelabs/kteleop
+
+I reused pretty much none of the code from these
+- K-OS, the interface layer with the joints from before, is being deprecated, and also doesn't support sending upper body commands at the same time we are running a locomotion policy for balance or movement
+- A lot of them used Vuer, which we ditched for performance reasons mentioned above
+- Some of them use pybullet for inverse kinematics, which I actually didn't try. I think this probably would've been the next thing I tried if rolling my own with jax didn't work, and I would've done this sooner if I didn't want the learning experience of digging into the lower-level details.
+- Some of them just used a puppet to get the joint angles directly.
+
+One of the biggest items for future work is actually getting data out of the system and using it for training policies with imitation learning, which some of those other repos do but this one doesn't. It does produce logs but not of the video stream.
