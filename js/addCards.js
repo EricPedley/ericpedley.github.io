@@ -1,24 +1,12 @@
 async function addCards() {
     const user = "EricPedley"
     const repoList = [
-        "https://raw.githubusercontent.com/EricPedley/ericpedley.github.io/main/extra_projects/antalmanac.md",
-        "https://raw.githubusercontent.com/EricPedley/ericpedley.github.io/main/extra_projects/uav_forge.md",
-        "https://github.com/EricPedley/spotify-yt-react",
-        "https://github.com/EricPedley/kanyezone-bot-cpp",
-        "https://github.com/EricPedley/posture-detector",
-        "https://github.com/EricPedley/zotmeal-backend",
-        "https://github.com/EricPedley/ibm-quantum-tracker",
-        "https://github.com/EricPedley/opengl-projects",
-        "https://github.com/EricPedley/Quick-Review",
-        "https://github.com/EricPedley/audio-splicer",
-        "https://github.com/EricPedley/Fantasy-XC-V2",
-        "https://github.com/EricPedley/First-Unity-Project",
-        "https://github.com/EricPedley/justcare",
-        "https://github.com/EricPedley/animal-run-game",
-        "https://github.com/EricPedley/deanza-course-notifier",
-        "https://github.com/EricPedley/knife-guy-game",
-        "https://github.com/EricPedley/DeepFinder",
-        "https://github.com/EricPedley/ericpedley.github.io"
+        "/extra_projects/a2rl.md",
+        "/extra_projects/kscale.md",
+        "/extra_projects/uav_forge.md",
+        "https://github.com/UCI-Rocket-Project/rocket-tracker/",
+        "https://github.com/EricPedley/roomba_ws",
+        "https://github.com/EricPedley/so101",
     ]
     const container = document.querySelector(".card-container");
     for(const repo of repoList) {
