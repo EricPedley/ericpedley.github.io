@@ -5,8 +5,8 @@ async function addCards() {
         "/extra_projects/kscale.md",
         "/extra_projects/uav_forge.md",
         "https://github.com/UCI-Rocket-Project/rocket-tracker/",
-        "https://github.com/EricPedley/roomba_ws",
-        "https://github.com/EricPedley/so101",
+        // "https://github.com/EricPedley/roomba_ws",
+        // "https://github.com/EricPedley/so101",
     ]
     const container = document.querySelector(".card-container");
     for(const repo of repoList) {
@@ -20,9 +20,6 @@ async function addCards() {
         });
     
 }
-
-
-
 
 window.onload=()=> {
     addCards();
