@@ -1,6 +1,9 @@
 # A2RL
 ![project screenshot](/images/a2rl_rerun.gif)
 ## Description
+I competed in the 2025 Abu Dhabi Autonomous Racing League drone competition. Along with two other undergrads, we went up against all odds and went 9th out of 14 teams internationally, out-competing teams twice our size with graduate degrees. I worked on the perception and localization systems, including a fine-tuned keypoint prediction network and EKF for onboard state estimation.
+
+## Details
 This year (2025) I had the amazing opportunity to participate in the Abu Dhabi Autonomous Racing League's first annual autonomous drone race. In this competition every team is given an identical quadcopter with a IMU, camera, and jetson orin nx 16gb, and tasked with having the drone fly as fast as possible through a race course. The main challenges are localizing the drone with just the onboard sensors/compute, and designing a planner/controller that will get the drone to fly as fast as possible through the course. Our team, Cyclone Labs, entered the competition as one of fourteen teams with the odds heavily stacked against us: our team consisted of just our manager, three undergrad CS students, and a retired FPV racer, competing against entire labs of grad students. The competition consisted of two qualification stages in November and January, and a final race in April.
 
 <!-- Insert GIF of TU delft flight through the course -->

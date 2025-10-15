@@ -1,6 +1,38 @@
 # UAV Forge 
-![project screenshot](https://github.com/user-attachments/assets/60d43fca-0bf2-4d99-9981-27cc293cee59)
+![project screenshot](/images/uavf_compilation.gif)
 ## Description
-UAV Forge is an engineering team at UC Irvine that competes in the Student Unmanned Aerial Systems competition every year. I joined the team my sophomore year as a member of the Imaging subteam, and then lead that team for my Junior and Senior years (and renamed it to Perception). Being on the team taught me a lot about computer vision and working on physical autonomous systems.
+UAV Forge is a student engineering team at UC Irvine that builds autonomous drones to compete in the Student Unmanned Aerial Systems competition against teams from all over the world every year. I was on the team from sophomore to senior year, and lead the Perception subteam the last two years (~10 total unique direct reports). Over the course of my involvement the team went from not even qualifying for the competition and not ever running a computer vision system live on the drone, to consistently finding and hitting targets, and winning 7th place out of ~50 international teams at the 2025 competition (1st in the US). During my time on the team I developed broad skills in computer vision, UAVs, and systems engineering.
 
+### Perception System Development
 
+Built the core perception pipeline including camera interfaces, object detection, and target tracking
+Integrated multiple camera types (SIYI gimbals, USB cameras, CSI cameras, Arducam) with unified interfaces
+Implemented gimbal control and ROI tracking capabilities
+Developed camera projection and calibration systems
+
+### Simulation and Testing Infrastructure
+
+<!-- ![project screenshot](/images/uav_forge/gazebo_testing.png) -->
+- Created comprehensive automated testing scripts for end-to-end mission validation in Gazebo
+- Built target spawning and scoring systems for simulation
+- Developed scripts to run missions repeatedly for performance benchmarking
+- Achieved ~180-318 point average scores in simulation testing
+
+### Deployment, Logging and Visualization
+
+- Went out for countless real life testing sessions with the drone
+- Built comprehensive logging systems for perception data
+- Created video generation tools from logged data with pose visualization
+
+### Object Detection and Tracking
+
+Integrated YOLO models for target detection (#142, #148, #224)
+Implemented TensorRT optimization for Jetson deployment (#148)
+Developed tracking algorithms using Ultralytics (#216, #224)
+Created drone detection and obstacle avoidance systems (#126, #194)
+
+### Technical Leadership
+
+- Architected full perception system involving real-time processing requirements, testability, and sensor synchronization.
+- Reviewed over 80 pull requests across 10 different members
+- Collaborated with other teams for systems integration
