@@ -76,10 +76,10 @@ class Card extends HTMLElement {
             getProjectDetails(sourceURL,branch).then(({title,descriptionText,backgroundImageURL,demoURL})=>{
                 titleEl.textContent = title;
                 descriptionEl.innerHTML = descriptionText;
-                descriptionEl.innerHTML += `
-                <br><br><a target="_blank" href="${sourceURL}">
-                    <img alt="github logo" class="linkicon" src="images/github-logo.png">Source Code
-                </a>`;
+                // descriptionEl.innerHTML += `
+                // <br><br><a target="_blank" href="${sourceURL}">
+                //     <img alt="github logo" class="linkicon" src="images/github-logo.png">Source Code
+                // </a>`;
                 if(demoURL)
                     descriptionEl.innerHTML+= `
                     <a target="_blank" href="${demoURL}"><img alt="external link icon" class="linkicon" src="images/external.png">
