@@ -1,7 +1,7 @@
-# UAV Forge 
+# Student Unmanned Aerial Systems
 ![project screenshot](/images/uavf_compilation.gif)
 ## Description
-UAV Forge is a student engineering team at UC Irvine that builds autonomous drones to compete in the Student Unmanned Aerial Systems competition against teams from all over the world every year. I was on the team from sophomore to senior year, and lead the Perception subteam the last two years (~10 total unique direct reports). Over the course of my involvement the team went from not even qualifying for the competition and not ever running a computer vision system live on the drone, to consistently finding and hitting targets, and winning 7th place out of ~50 international teams at the 2025 competition (1st in the US). During my time on the team I developed broad skills in computer vision, UAVs, and systems engineering.
+Student Unmanned Aerial Systems is an international competition where teams build autonomous UAVs to complete objectives similar to search and rescue and package delivery. I was on the UC Irvine team (UAV Forge) from sophomore to senior year, and lead the Perception subteam the last two years. Over the course of my involvement the team went zero to our first successful physical testing and winning 7th place out of ~50 international teams at the 2025 competition (1st in the US). During my time on the team I developed broad skills in computer vision, UAVs, and systems engineering.
 
 ### Perception System Development
 
