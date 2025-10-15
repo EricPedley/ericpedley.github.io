@@ -5,7 +5,7 @@ async function addCards() {
         "/extra_projects/a2rl.md",
         "/extra_projects/uav_forge.md",
         // "https://github.com/EricPedley/so101",
-        // "https://github.com/UCI-Rocket-Project/rocket-tracker/",
+        "https://github.com/UCI-Rocket-Project/rocket-tracker/",
         // "https://github.com/EricPedley/roomba_ws",
         // "https://github.com/EricPedley/erics_cameras",
         // "https://github.com/Cyclone-Labs/Simple-Quad-RL",

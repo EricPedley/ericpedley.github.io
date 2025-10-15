@@ -18,7 +18,7 @@ async function getProjectDetails(repoLink,branch) {
     }
     try {
         const title = new RegExp(/# (.*)/).exec(readmeText)[1]//first item in returned list is the full match so we ignore it
-        const descriptionText = new RegExp(/Description:?\n(.*)/).exec(readmeText)[1];
+        const descriptionText = new RegExp(/Description:?\n([\s\S]*?)(?=\n\s*\n|$)/).exec(readmeText)[1].replace(/\n/g,'<br>');//match everything after "Description:" until the next blank line or end of string, including newlines
         const backgroundImageURL = new RegExp(/project screenshot]\((.*?)\)/).exec(readmeText)?.[1];
         const demoURL = new RegExp(/Demo Link]\((.*)\)/).exec(readmeText)?.[1];//optional chaining operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
         return {
