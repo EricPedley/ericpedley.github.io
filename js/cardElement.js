@@ -90,7 +90,32 @@ class Card extends HTMLElement {
                 if(thumbURL && !thumbURL.startsWith('http')) {
                     thumbURL = '/' + thumbURL.replace(/^\/+/, '');
                 }
-                thumbnail.style.backgroundImage = thumbURL? `url("${thumbURL}")`:'url("/images/default_image.png")';
+                
+                // Check if the thumbnail is a video file (webm, mp4, etc.)
+                const videoExtensions = ['.webm', '.mp4', '.webp'];
+                const isVideo = thumbURL && videoExtensions.some(ext => thumbURL.toLowerCase().endsWith(ext));
+                
+                if(isVideo) {
+                    // Create video element for video thumbnails
+                    const video = document.createElement('video');
+                    video.autoplay = true;
+                    video.muted = true;
+                    video.loop = true;
+                    video.playsinline = true;
+                    video.style.width = '100%';
+                    video.style.height = '100%';
+                    video.style.objectFit = 'cover';
+                    
+                    const source = document.createElement('source');
+                    source.src = thumbURL;
+                    source.type = `video/${thumbURL.split('.').pop().toLowerCase()}`;
+                    
+                    video.appendChild(source);
+                    thumbnail.appendChild(video);
+                } else {
+                    // Use background image for static images
+                    thumbnail.style.backgroundImage = thumbURL? `url("${thumbURL}")`:'url("/images/default_image.png")';
+                }
             });
         }
     }

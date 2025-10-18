@@ -1,5 +1,9 @@
 # Abu Dhabi Autonomous Racing League
-![project screenshot](/images/a2rl_rerun.gif)
+<video width="100%" autoplay muted loop playsinline>
+  <source src="/images/a2rl_rerun.webm" type="video/webm">
+</video>
+<!-- ![project screenshot](/images/a2rl_rerun.webm) -->
+
 ## Description
 I competed in the 2025 Abu Dhabi Autonomous Racing League drone competition. Along with two other undergrads, we went up against all odds and went 9th out of 14 teams internationally, out-competing teams twice our size with graduate degrees. I worked on the perception and localization systems, including a fine-tuned keypoint prediction network and EKF for onboard state estimation.
 

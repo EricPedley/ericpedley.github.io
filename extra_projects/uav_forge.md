@@ -1,5 +1,8 @@
 # Student Unmanned Aerial Systems
-![project screenshot](/images/uavf_compilation.gif)
+<video width="100%" autoplay muted loop playsinline>
+  <source src="/images/uavf_compilation.webm" type="video/webm">
+</video>
+<!-- ![project screenshot](/images/uavf_compilation.webm) -->
 ## Description
 Student Unmanned Aerial Systems is an international competition where teams build autonomous UAVs to complete objectives similar to search and rescue and package delivery. I was on the UC Irvine team (UAV Forge) from sophomore to senior year, and lead the Perception subteam the last two years. Over the course of my involvement the team went zero to our first successful physical testing and winning 7th place out of ~50 international teams at the 2025 competition (1st in the US). During my time on the team I developed broad skills in computer vision, UAVs, and systems engineering.
 

@@ -30,7 +30,9 @@ Then, I selected the new layer itself(not the transparency mask) and added a new
 
 After that I added the shadows to the transparency mask using the free select tool, and deleting the areas of the "light source" where the shape would be casting a shadow. I made a triangle with one vertex about where the "light source" point was before, and the two edges coinciding with the edges of the parts of the logo shape that would cast a shadow.
 
-![image]({{site.baseurl}}/images/gimp-wallpaper-blog/step5.gif)
+<video width="100%" autoplay muted loop playsinline>
+  <source src="{{site.baseurl}}/images/gimp-wallpaper-blog/step5.webm" type="video/webm">
+</video>
 
 After that, I got rid of the parts of the "light" transparency mask that were behind the logo, colored the logo a bit differently, and put the layers on top of each other in this order: light -> logo -> background.
 
